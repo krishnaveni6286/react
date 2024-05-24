@@ -1,0 +1,12 @@
+
+
+
+.class table{
+ border-collapse: collapse;
+ width: 100%;
+
+}
+.cell{
+    border: 1px solid black;
+    padding: 8px;
+}

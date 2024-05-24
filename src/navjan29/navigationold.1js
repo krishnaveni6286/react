@@ -1,0 +1,49 @@
+
+//it contains navigation part
+
+import { BrowserRouter,Routes,Route} from "react-router-dom";
+import HomeScreen from "../compoenets/screens/postloginscreen/homescreen";
+import SettingScreen from "../compoenets/screens/postloginscreen/settingsscreen";
+import AboutScreen from "../compoenets/screens/postloginscreen/aboutscreen";
+import ProductScreen from "../compoenets/screens/postloginscreen/productscreen";
+import InvalidScreen from "../compoenets/screens/invalidscreen";
+import ProductDetails from "../compoenets/screens/postloginscreen/productdetails";
+import { createContext, useState } from "react";
+import LoginScreen from "../compoenets/screens/preloginscrenn/loginscren";
+import PostLogin from "./postloginroues";
+import PreLogin from "./preloginroutes";
+
+
+
+
+export const DataShare=createContext() //creating context method
+const NavigationStack=()=>{
+
+    //using conteapi to avoid prop driling
+
+    const[name,setName]=useState("10kCoders")
+    const [Login,setLogin]=useState(false)
+
+    const LoginTrue=()=>{
+        setLogin(true)
+    }
+
+
+    return(
+
+         <DataShare.Provider value={{name,LoginTrue}}> // wrapping the context to componentsand giving value prop also
+        <BrowserRouter>
+        {
+            Login
+            ?
+            <PostLogin/>
+            :
+            <PreLogin/>
+        }
+
+        </BrowserRouter>
+        </DataShare.Provider>
+
+    )
+}
+export default NavigationStack;

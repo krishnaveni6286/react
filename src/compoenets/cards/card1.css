@@ -1,0 +1,31 @@
+
+
+
+
+
+div{
+    background-color: white;
+    position: absolute;
+    left: 160px;
+    top:20px;
+    border-radius: 30px;
+    
+}
+.card h2{
+    text-align: center;
+    height: 100px;
+}
+img{
+    border-radius: 40px;
+}
+p{
+    text-align: center;
+    color: blue;
+}
+#id2{
+    text-align: center;
+    color:orange;
+}
+body{
+    background-color: rgb(79, 94, 157);
+}
